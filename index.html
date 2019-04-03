@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Playbook Leroy Merlin</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/league.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -19,14 +19,30 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			Reveal.configure({ slideNumber: true });
+			Reveal.configure({ slideNumber: 'c/t' });
+			Reveal.configure({ showSlideNumber: 'all' });
 		</script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Test 1 pour Jérôme</section>
-				<section>Test 2 pour Jérôme</section>
-				<section>Coucou Paul</section>
+				<section data-markdown> 
+					<textarea data-template>
+						## Playbook Leroy Merlin
+
+						A journey through our UX / UI projects.
+					</textarea>
+				</section>
+				<section data-background-color="#444">
+				 	Test 2 pour Jérôme
+				</section>
+				<section data-background-image="https://www.impulsion.fr/wp-content/uploads/2019/01/ux-02.jpg">
+					Coucou Paul
+				</section>
+				<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-video-loop data-background-video-muted>
+					## Autre slide
+				</section>
 			</div>
 		</div>
 
@@ -37,12 +53,18 @@
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
 			Reveal.initialize({
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
 				]
 			});
 		</script>
